@@ -20,9 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _init() async {
     // Précharge les images pour éviter tout flash blanc
-    await Future.wait([
-      precacheImage(_background, context),
-    ]);
+    await Future.wait([precacheImage(_background, context)]);
 
     // Retire le splash natif : cette page prend le relais
     FlutterNativeSplash.remove();
@@ -31,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 2));
 
     if (!mounted) return;
-    Navigator.of(context).pushReplacementNamed('/login');
+    Navigator.of(context).pushReplacementNamed('/signup');
   }
 
   @override
@@ -42,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           // Image de fond plein écran
           Image(image: _background, fit: BoxFit.cover),
-          Text("HI", style: TextStyle(color: Colors.black),)
+          Text("HI", style: TextStyle(color: Colors.black)),
         ],
       ),
     );

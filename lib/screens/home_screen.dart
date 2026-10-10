@@ -5,7 +5,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return const Scaffold( // scaffold est un widget qui crée la page de lapplication avec le appbar, le body, le drawer, etc.
       body: Center(child: Text('Accueil')),
     );
   }
